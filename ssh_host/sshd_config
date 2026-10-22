@@ -1,0 +1,9 @@
+Port 22
+# лише вхід за ключем
+HostKey /run/lab2-host-key
+PubkeyAuthentication yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PermitRootLogin no
+AllowUsers lab
+AuthorizedKeysFile /home/lab/.ssh/authorized_keys

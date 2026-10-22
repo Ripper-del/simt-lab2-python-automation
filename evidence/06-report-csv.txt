@@ -1,0 +1,10 @@
+$ cat report.csv
+category,item,result,details
+network_map,lab1-frontend,info,"app, proxy"
+network_map,lab1-backend,info,"app, db"
+ports_check,лише проксі публікує порт,PASS,відповідає вимогам
+http,запит 1,PASS,status=200 time_ms=8.8 hits=5
+http,запит 2,PASS,status=200 time_ms=4.4 hits=6
+http,лічильник +1,PASS,"[5, 6]"
+compare_cli_api,"склад, стани, мережі, порти",PASS,відмінностей немає
+[exit code: 0]

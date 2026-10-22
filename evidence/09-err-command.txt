@@ -1,0 +1,11 @@
+$ .venv/bin/python -c "
+import netmon
+a = netmon.parse.__globals__['argparse'].Namespace(ssh_host='127.0.0.1', ssh_port=2222, user='lab', key=netmon.Path('.state/client_key'), known_hosts=netmon.Path('.state/known_hosts'))
+ssh = netmon.ssh_connect(a)
+try:
+    netmon.run_ssh(ssh, 'docker inspect no-such-container')
+except RuntimeError as e:
+    print('RuntimeError:', e)
+"
+RuntimeError: команда завершилась з кодом 1: docker inspect no-such-container: Error: No such object: no-such-container
+[exit code: 0]

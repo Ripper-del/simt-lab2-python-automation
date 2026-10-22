@@ -1,0 +1,25 @@
+$ .venv/bin/python netmon.py inventory --report report_violation.csv --inventory inventory_violation.json
+SSH: lab-vm | Docker: 28.5.2
+NAME                STATUS              CONFIG FILES
+lab1                running(3)          /home/student/labs/LR1/docker-compose.yml
+
+[CLI] контейнерів: 4, [API] контейнерів: 4
+  proxy  b0420c6c5dfe nginx:1.27-alpine  running  ['lab1-frontend=172.28.1.3'] ['0.0.0.0:8080->80/tcp', ':::8080->80/tcp']
+  extra  d4291fe7fb7b nginx:1.27-alpine  running  ['bridge=172.17.0.2'] ['0.0.0.0:9999->80/tcp', ':::9999->80/tcp']
+  app    d5b4ae5d2b71 lab1-app:1.0       running  ['lab1-backend=172.28.2.3', 'lab1-frontend=172.28.1.2'] []
+  db     f1a5660c9a27 redis:7-alpine     running  ['lab1-backend=172.28.2.2'] []
+
+Мережа -> контейнери:
+  lab1-frontend: app, proxy
+  bridge: extra
+  lab1-backend: app, db
+
+Перевірка публікації портів: порушення: extra (d4291fe7fb7b): 0.0.0.0:9999->80/tcp, :::9999->80/tcp
+HTTP #1: status=200 time=9.7 ms hits=7
+HTTP #2: status=200 time=11.8 ms hits=8
+Лічильник зріс на 1 (proxy -> app -> db): True
+
+Порівняння CLI та API: відмінностей немає
+
+Збережено: inventory_violation.json, report_violation.csv
+[exit code: 1]

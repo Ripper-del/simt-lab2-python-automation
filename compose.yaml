@@ -1,0 +1,15 @@
+name: lab2-sshhost
+
+services:
+  sshhost:
+    build: ./ssh_host
+    image: lab2-sshhost:1.0
+    container_name: lab2-sshhost
+    hostname: lab-vm
+    # SSH лише на локальній адресі
+    ports:
+      - "127.0.0.1:2222:22"
+    volumes:
+      - ./.state/client_key.pub:/run/lab2-authorized-key:ro
+      - ./.state/host_key:/run/lab2-host-key:ro
+      - /var/run/docker.sock:/var/run/docker.sock

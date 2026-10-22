@@ -1,0 +1,4 @@
+$ curl -s http://127.0.0.1:8080/; curl -s http://127.0.0.1:8080/
+{"hits":3,"instance":"d5b4ae5d2b71"}
+{"hits":4,"instance":"d5b4ae5d2b71"}
+[exit code: 0]

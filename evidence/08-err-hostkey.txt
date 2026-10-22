@@ -1,0 +1,3 @@
+$ echo '[127.0.0.1]:2222 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqemGtaNeverSeenBeforeKeyAAAAAAAAAAAAAAAA' > .state/bad_known_hosts; .venv/bin/python netmon.py inventory --known-hosts .state/bad_known_hosts
+ПОМИЛКА: вузол недоступний або автентифікація не вдалася: Host key for server '127.0.0.1' does not match: got 'AAAAC3NzaC1lZDI1NTE5AAAAIBvNdJ8btGdJ+aAmr6spOJ/AkWWB+lRw44zKAkm+Z6ht', expected 'AAAAC3NzaC1lZDI1NTE5AAAAIOMqqemGtaNeverSeenBeforeKeyAAAAAAAAAAAAAAAA'
+[exit code: 2]

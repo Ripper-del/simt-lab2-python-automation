@@ -1,0 +1,8 @@
+$ .venv/bin/python --version; .venv/bin/python -m pip list 2>/dev/null | grep -iE '^(paramiko|docker|requests) '; docker version --format 'Docker Engine {{.Server.Version}}'; docker compose version
+Python 3.13.7
+docker             7.2.0
+paramiko           5.1.0
+requests           2.34.2
+Docker Engine 28.5.2
+Docker Compose version v2.40.3-desktop.1
+[exit code: 0]

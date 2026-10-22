@@ -1,0 +1,17 @@
+$ cat monitoring.csv
+timestamp,services,http_status,http_time_ms
+2026-10-21T17:39:21,app=running;db=running;proxy=running,200,4.5
+2026-10-21T17:39:24,app=running;db=running;proxy=running,200,4.8
+2026-10-21T17:39:28,app=running;db=running;proxy=running,200,14.8
+2026-10-21T17:39:31,app=running;db=exited;proxy=running,503,15.7
+2026-10-21T17:39:34,app=running;db=exited;proxy=running,503,8.7
+2026-10-21T17:39:37,app=running;db=exited;proxy=running,503,9.8
+2026-10-21T17:39:40,app=running;db=exited;proxy=running,503,10.1
+2026-10-21T17:39:43,app=running;db=running;proxy=running,200,17.2
+2026-10-21T17:39:46,app=running;db=running;proxy=running,200,9.2
+2026-10-21T17:39:49,app=running;db=running;proxy=running,200,9.0
+2026-10-21T17:39:52,app=running;db=running;proxy=running,200,7.1
+2026-10-21T17:39:56,app=running;db=running;proxy=running,200,7.2
+2026-10-21T17:39:59,app=running;db=running;proxy=running,200,7.4
+2026-10-21T17:40:02,app=running;db=running;proxy=running,200,9.2
+[exit code: 0]

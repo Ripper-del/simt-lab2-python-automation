@@ -1,0 +1,7 @@
+$ ssh -i .state/client_key -p 2222 -o UserKnownHostsFile=.state/known_hosts -o StrictHostKeyChecking=yes lab@127.0.0.1 'hostname; docker info --format "Docker Engine {{.ServerVersion}}"; docker compose ls'
+lab-vm
+Docker Engine 28.5.2
+NAME                STATUS              CONFIG FILES
+lab1                running(3)          /home/student/labs/LR1/docker-compose.yml
+lab2-sshhost        running(1)          /home/student/labs/LR2/compose.yaml
+[exit code: 0]
